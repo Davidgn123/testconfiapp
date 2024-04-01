@@ -1,7 +1,7 @@
 import { AdminModel } from "../models/admin.model.js";
 import bcrypt from "bcrypt";  
 import jwt from "jsonwebtoken";
-import { TOKEN_SECRET } from "../config.js";
+import { ADMIN_TOKEN_SECRET } from "../config.js";
 
 // Obtener todos los administradores
 export const obtenerAdministradores = async (req, res) => {
@@ -86,7 +86,7 @@ export const iniciarSesionAdmin = async (req, res) => {
       }
 
       // Generar el token de autenticación con el formato "Bearer <token>"
-      const token = jwt.sign({ id: admin._id }, TOKEN_SECRET, { expiresIn: '1h' });
+      const token = jwt.sign({ id: admin._id }, ADMIN_TOKEN_SECRET, { expiresIn: '1h' });
 
       // Devolver el token y los datos del admin
       res.json({ token: `Bearer ${token}`, admin });

@@ -16,9 +16,9 @@ const router = express.Router();
 // Rutas para administradores
 router.get('/admins', obtenerAdministradores);
 router.post('/admins', crearAdministrador);
-router.get('/admins/:id', obtenerAdministradorPorId);
-router.put('/admins/:id', actualizarAdministradorPorId);
-router.delete('/admins/:id', eliminarAdministradorPorId);
+router.get('/admins/admin/:id', obtenerAdministradorPorId);
+router.put('/admins/admin/:id', actualizarAdministradorPorId);
+router.delete('/admins/admin/:id', eliminarAdministradorPorId);
 
 //RUTAS PARA PARA TUTORES
 import {obtenerUsuariosYColecciones,actualizarTutor,eliminarTutor,obtenerTutorPorId,creartutor, /*crearPublicacion*/} from '../controllers/admin.manager.controller.js'

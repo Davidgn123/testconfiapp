@@ -13,7 +13,7 @@ import bcrypt from 'bcryptjs';
 export const obtenerUsuariosYColecciones = async (req, res) => {
   try {
       // Realizar la consulta para obtener todos los usuarios
-      const tutores = await User.find({});
+      const tutores = await Tutor.find({});
       
 
       res.status(200).json(tutores);

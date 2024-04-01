@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 
-// Usuario model
 const userSchema = new mongoose.Schema({
-    
     email: {
         type: String,
         required: true,
@@ -37,6 +35,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true
+    },
+    role: {
+        type: String,
+        default: "tutor" // Establece el valor predeterminado del campo de rol como "tutor"
     }
 }, {
     timestamps: true

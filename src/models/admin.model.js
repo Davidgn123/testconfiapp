@@ -11,16 +11,19 @@ const adminSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
-  email:{
+  email: {
     type: String,
-        required: true,
-        trim: true,
-        unique: true
+    required: true,
+    trim: true,
+    unique: true
   },
-  
   password: {
     type: String,
     required: true,
+  },
+  role: {
+    type: String,
+    default: "admin" // Establece el valor predeterminado del campo de rol como "admin"
   },
   createdAt: {
     type: Date,
